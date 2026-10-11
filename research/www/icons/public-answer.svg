@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-labelledby="title desc">
+  <title id="title">Direct answer card</title>
+  <desc id="desc">Neutral AI answer and quiz image with multilingual labels.</desc>
+  <rect width="700" height="440" fill="#eef4f2"/>
+  <rect x="90" y="78" width="520" height="240" rx="26" fill="#ffffff" stroke="#d9e1de" stroke-width="5"/>
+  <rect x="140" y="132" width="210" height="30" rx="15" fill="#2563eb"/>
+  <rect x="140" y="202" width="360" height="22" rx="11" fill="#d9e1de"/>
+  <rect x="140" y="250" width="290" height="22" rx="11" fill="#d9e1de"/>
+  <circle cx="522" cy="148" r="50" fill="#0f766e"/>
+  <text x="506" y="166" fill="#ffffff" font-family="Arial, sans-serif" font-size="46" font-weight="700">?</text>
+  <text x="86" y="390" fill="#172026" font-family="Arial, sans-serif" font-size="28" font-weight="700">Answer | Reponse | &#1580;&#1608;&#1575;&#1576; | Jibu</text>
+</svg>

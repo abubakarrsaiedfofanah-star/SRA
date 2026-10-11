@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Teacher planning card</title>
+  <desc id="desc">Neutral teacher portal image with lesson planning and multilingual classroom support.</desc>
+  <rect width="900" height="560" fill="#edf6f9"/>
+  <rect x="64" y="58" width="520" height="360" rx="22" fill="#ffffff" stroke="#d9e1de" stroke-width="4"/>
+  <rect x="112" y="110" width="410" height="46" rx="12" fill="#0f766e"/>
+  <rect x="112" y="190" width="330" height="24" rx="12" fill="#d9e1de"/>
+  <rect x="112" y="238" width="390" height="24" rx="12" fill="#d9e1de"/>
+  <rect x="112" y="286" width="270" height="24" rx="12" fill="#d9e1de"/>
+  <circle cx="690" cy="150" r="74" fill="#2563eb"/>
+  <rect x="620" y="260" width="154" height="154" rx="24" fill="#d97706"/>
+  <path d="M662 132h76M690 110v76" stroke="#fff" stroke-width="18" stroke-linecap="round"/>
+  <path d="M662 316h72M662 360h104" stroke="#fff" stroke-width="18" stroke-linecap="round"/>
+  <text x="96" y="486" fill="#172026" font-family="Arial, sans-serif" font-size="30" font-weight="700">Lesson  |  Lecon  |  &#1583;&#1585;&#1587;  |  Aula  |  Darasa</text>
+</svg>

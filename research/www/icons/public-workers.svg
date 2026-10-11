@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Worker skills and safety card</title>
+  <desc id="desc">Neutral worker skills image with tools, safety, and multilingual practical learning labels.</desc>
+  <rect width="900" height="560" fill="#f6f7f2"/>
+  <rect x="84" y="82" width="250" height="250" rx="28" fill="#0f766e"/>
+  <rect x="398" y="82" width="250" height="250" rx="28" fill="#d97706"/>
+  <rect x="681" y="112" width="72" height="220" rx="22" fill="#2563eb"/>
+  <path d="M172 184h112v28H172zM200 140h28v112h-28z" fill="#ffffff"/>
+  <path d="M500 132l74 74-74 74-74-74z" fill="#ffffff"/>
+  <path d="M710 154v118M686 206h62" stroke="#fff" stroke-width="18" stroke-linecap="round"/>
+  <rect x="122" y="386" width="656" height="72" rx="18" fill="#101416"/>
+  <text x="150" y="432" fill="#ffffff" font-family="Arial, sans-serif" font-size="29" font-weight="700">Skills  |  Securite  |  &#1605;&#1607;&#1575;&#1585;&#1577;  |  Ufundi  |  Trabalho</text>
+</svg>

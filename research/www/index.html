@@ -1,0 +1,1462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Student Research Africa" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>Student Research Africa</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Student Research Africa home">
+        <span class="brand-mark">SRA</span>
+        <span>
+          <strong>Student Research Africa</strong>
+          <small>answers, notes, papers</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home" data-public-page="home">Home</a>
+        <a href="#about-us" data-public-page="about-us">About us</a>
+        <a href="#what-we-do" data-public-page="what-we-do">What we do</a>
+        <a href="#contact-us" data-public-page="contact-us">Contact us</a>
+        <a href="#join-us" data-public-page="join-us">Join us now</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+        <span class="icon">O</span>
+      </button>
+      <button class="app-menu-btn" id="appMenuToggle" type="button" aria-label="Open app menu">Menu</button>
+      <button class="ghost-btn auth-required" id="logoutAccount" type="button">Logout</button>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">Africa-wide study research</p>
+          <h1>Student Research Africa</h1>
+          <p class="hero-copy">A professional learning system for African students, teachers, lecturers, and workers.</p>
+          <div class="public-actions public-only">
+            <a href="#join-us" data-public-page="join-us">Join us now</a>
+          </div>
+          <form class="search-panel auth-required" id="searchForm" role="search">
+            <div class="search-box">
+              <span class="search-icon" aria-hidden="true">?</span>
+              <input
+                id="searchInput"
+                type="search"
+                autocomplete="off"
+                placeholder="Search any subject, topic, question, WAEC paper, university course..."
+              />
+              <button type="submit">Search</button>
+            </div>
+            <div class="suggestions" id="suggestions" aria-live="polite"></div>
+          </form>
+
+          <div class="quick-examples auth-required" aria-label="Example searches">
+            <button type="button" data-search="WAEC chemistry">WAEC chemistry</button>
+            <button type="button" data-search="computer science algorithms">computer science algorithms</button>
+            <button type="button" data-search="anatomy skull bones">anatomy skull bones</button>
+          </div>
+
+          <div class="guided-actions auth-required" aria-label="Quick actions">
+            <a href="#join-us" data-public-page="join-us">Ask by photo or voice</a>
+            <a href="#countryEducation">Choose my country</a>
+            <a href="#dashboard">View my study home</a>
+            <button id="openCommand" type="button">Quick Search</button>
+          </div>
+
+          <div class="hero-metrics" aria-label="Platform preview metrics">
+            <span><strong>54</strong>African countries</span>
+            <span><strong>300+</strong>subjects & courses</span>
+            <span><strong>4</strong>question modes</span>
+          </div>
+        </div>
+
+        <aside class="study-visual" aria-label="Study resources preview">
+          <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1632215861513-130b66fe97f4?auto=format&fit=crop&w=1200&q=80" alt="Students learning in an African classroom" />
+            <span>Country-aware study app</span>
+          </div>
+          <div class="diagram-card">
+            <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=700&q=80" alt="Science diagram and microscope learning" loading="lazy" />
+            <span class="cell nucleus"></span>
+            <span class="cell chloroplast one"></span>
+            <span class="cell chloroplast two"></span>
+            <p>Diagrams</p>
+          </div>
+          <div class="paper-stack">
+            <img src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=700&q=80" alt="Study papers and notes for exam revision" loading="lazy" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <p>Past papers</p>
+          </div>
+          <div class="answer-card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Digital study answer on a laptop" loading="lazy" />
+            <strong>Direct answer</strong>
+            <span>Notes - PDFs - Quiz</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="public-info public-only" id="about-us">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">About us</p>
+            <h2>Built for African education, country by country.</h2>
+            <span class="about-tagline">Learn locally. Research globally. Grow practically.</span>
+          </div>
+        </div>
+        <div class="about-showcase">
+          <article class="about-panel active" id="about-mission">
+            <strong>Mission</strong>
+            <span>To give African students, teachers, lecturers, and workers a country-aware learning app for research, revision, practical skills, and AI-assisted study support.</span>
+          </article>
+          <article class="about-panel" id="about-vision">
+            <strong>Vision</strong>
+            <span>To become Africa's trusted education companion, connecting local curricula, languages, exams, universities, skills, and workplace learning in one accessible app.</span>
+          </article>
+          <article class="about-panel" id="about-promise">
+            <strong>Our Promise</strong>
+            <span>We design for real African classrooms and phones: multilingual support, country education paths, WhatsApp research, offline packs, and admin-reviewed learning content.</span>
+          </article>
+          <div class="about-values" aria-label="Platform values">
+            <span>Country-aware</span>
+            <span>Multilingual</span>
+            <span>Practical</span>
+            <span>Verified over time</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="public-info public-only" id="what-we-do">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">What we do</p>
+            <h2>We guide students, teachers, lecturers, and workers with role-based tools.</h2>
+          </div>
+        </div>
+        <div class="public-grid">
+          <article class="public-image-card">
+            <img src="https://images.pexels.com/photos/7395448/pexels-photo-7395448.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Diverse students learning together in class" loading="lazy" />
+            <strong>Students</strong><span>Study answers, notes, quizzes, courses, practicals, and exam revision.</span>
+          </article>
+          <article class="public-image-card">
+            <img src="https://images.pexels.com/photos/5905754/pexels-photo-5905754.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Teacher preparing lessons with a laptop" loading="lazy" />
+            <strong>Teachers</strong><span>Lesson plans, schemes, class activities, assessments, and teaching resources.</span>
+          </article>
+          <article class="public-image-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="University students collaborating on research" loading="lazy" />
+            <strong>Lecturers</strong><span>University course support, lecture outlines, tutorials, assignments, and references.</span>
+          </article>
+          <article class="public-image-card">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80" alt="Solar skills and practical workplace training" loading="lazy" />
+            <strong>Workers</strong><span>Skills guides, safety steps, reports, and workplace learning.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="public-info public-only" id="portal-features-overview">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">All portals</p>
+            <h2>Everything built into each role dashboard.</h2>
+            <span class="about-tagline">One platform. Four role-based portals. Complete support for every learning environment.</span>
+          </div>
+        </div>
+        <div class="portal-feature-showcase">
+          <article class="portal-showcase-card student-card">
+            <span class="portal-badge">Student portal</span>
+            <h3>Research, revise, and grow</h3>
+            <ul>
+              <li>Topic search and exam paper support</li>
+              <li>Lesson notes, study plans, and active learning prompts</li>
+              <li>WhatsApp research and photo/voice questions</li>
+              <li>Saved course, unit, and topic tracking</li>
+            </ul>
+          </article>
+
+          <article class="portal-showcase-card teacher-card">
+            <span class="portal-badge">Teacher portal</span>
+            <h3>Plan and teach with confidence</h3>
+            <ul>
+              <li>Lesson plans, class activities, and schemes of work</li>
+              <li>Assessment and worksheet generation</li>
+              <li>Practical guides and classroom resources</li>
+              <li>Course progress tracking for learners</li>
+            </ul>
+          </article>
+
+          <article class="portal-showcase-card lecturer-card">
+            <span class="portal-badge">Lecturer portal</span>
+            <h3>Run stronger academic support</h3>
+            <ul>
+              <li>Course outlines and semester planning</li>
+              <li>Lecture notes, tutorials, and reading packs</li>
+              <li>Assignment support and academic resources</li>
+              <li>University-level study guidance and references</li>
+            </ul>
+          </article>
+
+          <article class="portal-showcase-card worker-card">
+            <span class="portal-badge">Worker portal</span>
+            <h3>Learn practical skills and safety</h3>
+            <ul>
+              <li>Skills guides and technical learning paths</li>
+              <li>Safety checklists and workplace procedures</li>
+              <li>Report templates and practical training notes</li>
+              <li>Skills progress tracking for real work tasks</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="public-info public-only">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Learning in pictures</p>
+            <h2>Built for classrooms, campuses, workshops, and mobile study.</h2>
+            <span>Student Research Africa supports the real places where learning happens: at school, at university, at work, and on the phone.</span>
+          </div>
+        </div>
+        <div class="public-media-grid">
+          <article class="media-story-card">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="Students studying together with notebooks for exam revision" loading="lazy" />
+            <div>
+              <strong>Study together</strong>
+              <span>Students can revise topics, save answers, generate quizzes, and prepare for exams with country-aware guidance.</span>
+            </div>
+          </article>
+          <article class="media-story-card">
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1000&q=80" alt="Teacher explaining a lesson to students in class" loading="lazy" />
+            <div>
+              <strong>Teach with structure</strong>
+              <span>Teachers can build lesson plans, assessments, practical guides, worksheets, and class activities from one portal.</span>
+            </div>
+          </article>
+          <article class="media-story-card">
+            <img src="https://images.pexels.com/photos/20853660/pexels-photo-20853660.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Adults learning practical workshop skills" loading="lazy" />
+            <div>
+              <strong>Learn practical skills</strong>
+              <span>Workers and trainees get safety-first steps, tool lists, reports, and practical learning modules.</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="public-info public-only">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Video learning</p>
+            <h2>Use videos, diagrams, photos, voice, and notes together.</h2>
+            <span>Every portal is designed to combine AI study help with media-based learning and WhatsApp follow-up.</span>
+          </div>
+        </div>
+        <div class="public-video-grid">
+          <a class="video-card" href="https://www.youtube.com/results?search_query=WAEC+BECE+KCSE+exam+revision+study+tips" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/23Xqu0jXlfs/hqdefault.jpg" alt="Exam revision video preview" loading="lazy" />
+            <strong>Exam revision videos</strong>
+            <span>Find WAEC, BECE, KCSE, NSC, and country-style revision videos connected to exam practice and study planning.</span>
+            <em>Open on YouTube</em>
+          </a>
+          <a class="video-card" href="https://www.youtube.com/results?search_query=teacher+lesson+planning+classroom+activities" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/l59uVLSadqU/hqdefault.jpg" alt="Teaching support video preview" loading="lazy" />
+            <strong>Teaching support videos</strong>
+            <span>Teachers can pair AI lesson plans with classroom demonstrations, activities, and teaching examples.</span>
+            <em>Open on YouTube</em>
+          </a>
+          <a class="video-card" href="https://www.youtube.com/results?search_query=vocational+skills+safety+training+practical+workshop" target="_blank" rel="noopener">
+            <img src="https://img.youtube.com/vi/5MgBikgcWnY/hqdefault.jpg" alt="Skills training video preview" loading="lazy" />
+            <strong>Skills training videos</strong>
+            <span>Workers can search for safety demonstrations, tools, maintenance, and practical step-by-step training.</span>
+            <em>Open on YouTube</em>
+          </a>
+        </div>
+      </section>
+
+      <section class="public-info public-only">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Country and language support</p>
+            <h2>One app for Africa, with local education paths.</h2>
+            <span>Choose a country and the app drafts education levels, faculties, departments, subjects, modules, exams, and learning language.</span>
+          </div>
+        </div>
+        <div class="public-detail-grid">
+          <article>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Classroom used for country education setup" loading="lazy" />
+            <strong>Country setup</strong>
+            <span>Supports all African countries with AI-draft education maps that can later be admin reviewed and verified.</span>
+          </article>
+          <article>
+            <img src="https://images.pexels.com/photos/7396374/pexels-photo-7396374.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Diverse learners for education language support" loading="lazy" />
+            <strong>Education language</strong>
+            <span>Suggests English, French, Arabic, Portuguese, Swahili, Amharic, Kinyarwanda, Somali, and more by country.</span>
+          </article>
+          <article>
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80" alt="Students using laptops for digital media research" loading="lazy" />
+            <strong>Media research</strong>
+            <span>Students can type, upload a photo, record voice, continue on WhatsApp, and save learning activity in the portal.</span>
+          </article>
+          <article>
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" alt="Reviewed documents for verified education content" loading="lazy" />
+            <strong>Verified over time</strong>
+            <span>Admins can move country maps and learning resources from AI draft to reviewed and verified content.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="public-info public-only" id="contact-us">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Contact us</p>
+            <h2>Partner with us for curriculum, school, university, and skills content.</h2>
+            <span>Email: support@studentresearch.africa | WhatsApp: +232 76 000000</span>
+          </div>
+        </div>
+        <div class="partnership-grid">
+          <article class="partnership-card">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80" alt="Education partners discussing learning content" loading="lazy" />
+            <strong>Partnerships</strong>
+            <span>Work with education partners to prepare verified resources, country maps, and multilingual learning support.</span>
+          </article>
+          <article class="partnership-card">
+            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=80" alt="School classroom learning support" loading="lazy" />
+            <strong>Schools</strong>
+            <span>Support primary and secondary school departments, subjects, exams, worksheets, and classroom activities.</span>
+          </article>
+          <article class="partnership-card">
+            <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80" alt="University students walking on campus" loading="lazy" />
+            <strong>Universities</strong>
+            <span>Build course outlines, lecture notes, tutorials, references, assignments, and faculty-level research paths.</span>
+          </article>
+          <article class="partnership-card">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80" alt="Skills centre practical training equipment" loading="lazy" />
+            <strong>Skills centres</strong>
+            <span>Connect workers and trainees with safety steps, practical guides, tool lists, reports, and skills modules.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="public-info public-only">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">WhatsApp research</p>
+            <h2>Open WhatsApp, type or snap a question, then keep chatting there.</h2>
+          </div>
+        </div>
+        <div class="public-grid">
+          <article class="public-image-card">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=80" alt="Opening a mobile chat conversation on a phone" loading="lazy" />
+            <strong>1. Open chat</strong><span>Use the website button to open your research WhatsApp chat.</span>
+          </article>
+          <article class="public-image-card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Sending a digital question with a laptop and notes" loading="lazy" />
+            <strong>2. Send question</strong><span>Type, snap a question photo, upload a document, or send a voice note.</span>
+          </article>
+          <article class="public-image-card">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80" alt="Continuing an online learning support conversation" loading="lazy" />
+            <strong>3. Continue there</strong><span>Ask follow-up questions in WhatsApp without returning to the website.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="public-info public-only feature-map" id="features">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Everything in one study system</p>
+            <h2>Choose a path, then use the tools your work needs.</h2>
+            <span>Every portal connects research, guided learning, media, progress, and country-aware support in one place.</span>
+          </div>
+          <a class="ghost-btn" href="#join-us">Choose a portal</a>
+        </div>
+        <div class="feature-map-grid">
+          <a href="#join-us"><strong>Research workspace</strong><span>Search subjects, topics, questions, and exam material with guided context.</span><em>Students and researchers</em></a>
+          <a href="#join-us"><strong>Exam revision</strong><span>Review WAEC, BECE, KCSE, and country-specific papers with answer support.</span><em>Practice with structure</em></a>
+          <a href="#join-us"><strong>Video learning</strong><span>Use revision, teaching, and skills videos alongside notes and diagrams.</span><em>Watch and learn</em></a>
+          <a href="#join-us"><strong>Photo and voice questions</strong><span>Upload a question image or record a voice prompt when typing is not enough.</span><em>Learn your way</em></a>
+          <a href="#join-us"><strong>Teacher tools</strong><span>Create lesson plans, schemes, assessments, practical guides, and class activities.</span><em>For classrooms</em></a>
+          <a href="#join-us"><strong>Lecturer tools</strong><span>Build course outlines, tutorials, lecture notes, references, and assignments.</span><em>For universities</em></a>
+          <a href="#join-us"><strong>Worker skills</strong><span>Follow safety-first guides, tool lists, reports, and practical learning paths.</span><em>For work and training</em></a>
+          <a href="#join-us"><strong>Offline and WhatsApp</strong><span>Continue study with saved packs and a WhatsApp conversation when you are away.</span><em>Stay connected</em></a>
+        </div>
+      </section>
+
+      <section class="join-portals public-only" id="join-us">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Join us now</p>
+            <h2>Choose the portal that matches your work.</h2>
+            <span>Each portal has its own register and login path, CRM workspace, WhatsApp research, and saved profile.</span>
+          </div>
+        </div>
+        <div class="portal-choice-grid">
+          <button type="button" data-portal-role="student" onclick="openPublicPage('student-portal', 'register', 'student')">
+            <strong>Student portal</strong>
+            <span>Study answers, notes, quizzes, past papers, courses, photos, voice, and WhatsApp research.</span>
+          </button>
+          <button type="button" data-portal-role="teacher" onclick="openPublicPage('student-portal', 'register', 'teacher')">
+            <strong>Teacher portal</strong>
+            <span>Lesson plans, schemes, assessments, class activities, resources, and classroom research.</span>
+          </button>
+          <button type="button" data-portal-role="lecturer" onclick="openPublicPage('student-portal', 'register', 'lecturer')">
+            <strong>Lecturer portal</strong>
+            <span>Course outlines, tutorials, lecture notes, references, assignments, and university tools.</span>
+          </button>
+          <button type="button" data-portal-role="worker" onclick="openPublicPage('student-portal', 'register', 'worker')">
+            <strong>Worker portal</strong>
+            <span>Skills guides, safety steps, reports, practical learning, and workplace WhatsApp help.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="onboarding auth-required" id="onboarding">
+        <button class="step-card active" type="button" data-step="profile" data-onboarding-target="#account-settings">
+          <strong>1</strong>
+          <span>Create your profile</span>
+        </button>
+        <button class="step-card" type="button" data-step="country" data-onboarding-target="#account-settings">
+          <strong>2</strong>
+          <span>Choose country and level</span>
+        </button>
+        <button class="step-card" type="button" data-step="units" data-onboarding-target="#moduleResearch">
+          <strong>3</strong>
+          <span>Select subject and module</span>
+        </button>
+        <button class="step-card" type="button" data-step="ask" data-onboarding-target="#moduleResearch">
+          <strong>4</strong>
+          <span>Run your first AI action</span>
+        </button>
+      </section>
+
+      <section class="trust-strip auth-required" aria-label="Quality promises">
+        <span>Country-aware education systems</span>
+        <span>Exam-style answers</span>
+        <span>Admin content approval</span>
+        <span>Photo, voice, chat, and WhatsApp ready</span>
+      </section>
+
+      <section class="mode-switcher auth-required" id="platformModes" aria-label="Platform modes">
+        <button class="mode-card active" type="button" data-mode="student">
+          <strong>Student</strong>
+          <span>Research, exam answers, notes, quizzes, practicals, videos</span>
+        </button>
+        <button class="mode-card" type="button" data-mode="teacher">
+          <strong>Teacher</strong>
+          <span>Lesson plans, schemes, marking guides, class activities</span>
+        </button>
+        <button class="mode-card" type="button" data-mode="lecturer">
+          <strong>Lecturer</strong>
+          <span>Course outlines, lecture notes, tutorials, assignments</span>
+        </button>
+        <button class="mode-card" type="button" data-mode="worker">
+          <strong>Worker & Skills</strong>
+          <span>Professional guides, safety steps, reports, skills learning</span>
+        </button>
+      </section>
+
+      <section class="guidance-hub auth-required" id="guidanceHub">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Guided learning system</p>
+            <h2 id="guidanceTitle">Student research path</h2>
+            <span id="guidanceSummary">Choose a country, level, subject, and topic. The system shapes answers for exam revision, assignments, practicals, and videos.</span>
+          </div>
+        </div>
+        <div class="guidance-grid" id="guidanceCards"></div>
+      </section>
+
+      <section class="levels auth-required" aria-label="Education levels">
+        <button class="level-btn active" type="button" data-level="All">All</button>
+        <button class="level-btn" type="button" data-level="Primary">Primary</button>
+        <button class="level-btn" type="button" data-level="JSS">JSS</button>
+        <button class="level-btn" type="button" data-level="SSS">SSS</button>
+        <button class="level-btn" type="button" data-level="University">University</button>
+        <button class="level-btn" type="button" data-level="Professional">Professional courses</button>
+        <button class="level-btn" type="button" data-level="Worker">Worker/skills</button>
+      </section>
+
+      <section class="filters auth-required" aria-label="Search filters">
+        <label>
+          Country
+          <select id="countryFilter">
+            <option>All countries</option>
+            <option>Sierra Leone</option>
+            <option>Ghana</option>
+            <option>Nigeria</option>
+          </select>
+        </label>
+        <label>
+          Faculty
+          <select id="facultyFilter">
+            <option>All faculties</option>
+            <option>Medical & Health</option>
+            <option>Engineering</option>
+            <option>Computer / IT</option>
+            <option>Law</option>
+            <option>Business</option>
+            <option>Agriculture</option>
+            <option>Education</option>
+            <option>Arts & Social Sciences</option>
+          </select>
+        </label>
+        <label>
+          Exam
+          <select id="examFilter">
+            <option>Any exam</option>
+            <option>WAEC</option>
+            <option>BECE</option>
+          </select>
+        </label>
+        <label>
+          Year
+          <select id="yearFilter">
+            <option>Any year</option>
+            <option>2026</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+          </select>
+        </label>
+        <label>
+          Language
+          <select id="languageFilter">
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Swahili">Swahili</option>
+          </select>
+        </label>
+        <label>
+          Output
+          <select id="outputFilter">
+              <option value="Study answer">Study answer</option>
+              <option value="Exam revision">Exam revision</option>
+              <option value="Lesson plan">Lesson plan</option>
+              <option value="Course outline">Course outline</option>
+              <option value="Lecture notes">Lecture notes</option>
+              <option value="Assignment">Assignment</option>
+              <option value="Practical guide">Practical guide</option>
+              <option value="Worker guide">Worker guide</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="country-education auth-required" id="countryEducation">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Country education system</p>
+            <h2 id="countryEducationTitle">Choose an African country</h2>
+            <span id="countryEducationSummary">Students will see the school structure, exams, subjects, and common study paths for the selected country.</span>
+          </div>
+        </div>
+        <div class="education-grid">
+          <article>
+            <h3>School Path</h3>
+            <ol class="path-list" id="schoolPathList"></ol>
+          </article>
+          <article>
+            <h3>Major Exams</h3>
+            <div class="exam-chip-list" id="countryExamList"></div>
+          </article>
+          <article>
+            <h3>Exam Bodies</h3>
+            <div class="mini-list" id="countryExamBodyList"></div>
+          </article>
+          <article>
+            <h3>Common Subjects</h3>
+            <div class="mini-list" id="countrySubjectList"></div>
+          </article>
+          <article>
+            <h3>University & Skills Courses</h3>
+            <div class="mini-list" id="countryCourseList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="student-portal public-only" id="student-portal">
+        <div class="portal-intro">
+          <p class="eyebrow" id="portalEyebrow">Student portal</p>
+          <h2 id="portalTitle">Student CRM portal</h2>
+          <span id="portalSummary">Register or login to enter your private student workspace.</span>
+          <div class="student-summary" id="studentSummary">Start by creating your student, teacher, or lecturer profile.</div>
+        </div>
+
+        <div class="portal-grid">
+          <form class="login-card" id="studentLogin">
+            <div class="panel-heading">
+              <div>
+                <h3 id="portalFormTitle">Student account access</h3>
+                <span id="loginStatus">Students use email and password here</span>
+              </div>
+            </div>
+            <div class="auth-tabs" role="tablist" aria-label="Account access mode">
+              <button type="button" data-auth-tab="register">Register</button>
+              <button type="button" data-auth-tab="login">Login</button>
+            </div>
+            <div class="demo-portal-buttons" aria-label="Demo portal accounts">
+              <button type="button" class="ghost-btn" data-demo-account="student">Open Student Dash</button>
+              <button type="button" class="ghost-btn" data-demo-account="teacher">Open Teacher Dash</button>
+              <button type="button" class="ghost-btn" data-demo-account="lecturer">Open Lecturer Dash</button>
+              <button type="button" class="ghost-btn" data-demo-account="worker">Open Worker Dash</button>
+            </div>
+            <div class="portal-link-row" aria-label="Portal links">
+              <a href="#roleGateway" class="portal-link">Student portal</a>
+              <a href="#roleGateway" class="portal-link">Teacher portal</a>
+              <a href="#roleGateway" class="portal-link">Lecturer portal</a>
+              <a href="#roleGateway" class="portal-link">Worker portal</a>
+            </div>
+            <input id="accountAction" type="hidden" value="" />
+            <div class="register-fields">
+              <label class="account-role-field">
+                Account type
+                <select id="accountRole">
+                  <option value="student">Student</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="lecturer">Lecturer</option>
+                  <option value="worker">Worker</option>
+                </select>
+              </label>
+              <label>
+                <span id="nameLabel">Full name</span>
+                <input id="studentName" type="text" placeholder="Aminata Kamara" />
+              </label>
+            </div>
+            <div class="role-register-hint register-fields" id="roleRegisterHint">Students can register and start learning immediately.</div>
+            <label>
+              Email
+              <input id="studentEmail" type="email" placeholder="student@email.com" required />
+            </label>
+            <label>
+              Password
+              <span class="password-field">
+                <input id="studentPassword" type="password" placeholder="At least 6 characters" required />
+                <button type="button" data-toggle-password="studentPassword" aria-label="Show password">Show</button>
+              </span>
+              <span class="password-strength register-fields" id="passwordStrength">Use at least 6 characters.</span>
+            </label>
+            <div class="register-fields">
+              <label>
+                Confirm password
+                <span class="password-field">
+                  <input id="studentPasswordConfirm" type="password" placeholder="Confirm password before saving" />
+                  <button type="button" data-toggle-password="studentPasswordConfirm" aria-label="Show confirm password">Show</button>
+                </span>
+              </label>
+              <label class="portal-setup-field">
+                Country
+                <select id="accountCountry"></select>
+              </label>
+              <label>
+                <span id="whatsappLabel">WhatsApp number for phone search</span>
+                <input id="studentWhatsapp" type="tel" placeholder="+232 76 000000" />
+              </label>
+              <label class="portal-setup-field">
+                <span id="levelLabel">Level</span>
+                <select id="accountLevel">
+                  <option>Primary</option>
+                  <option>JSS</option>
+                  <option>SSS</option>
+                  <option>University</option>
+                  <option>Professional</option>
+                  <option>Worker</option>
+                </select>
+              </label>
+              <label class="portal-setup-field">
+                <span id="studyTypeLabel">Study type</span>
+                <select id="studyType">
+                  <option value="subject">School subject</option>
+                  <option value="course">University course / programme</option>
+                  <option value="professional">Professional course</option>
+                  <option value="skill">Worker skill</option>
+                </select>
+              </label>
+              <label class="portal-setup-field">
+                <span id="courseLabel">Subject / course / programme</span>
+                <input id="accountCourse" type="text" placeholder="Biology, Computer Science, BSc Nursing..." />
+              </label>
+              <label class="portal-setup-field">
+                <span id="departmentLabel">Department / faculty</span>
+                <input id="accountDepartment" type="text" placeholder="Faculty of Science, Education, Engineering..." />
+              </label>
+              <label class="portal-setup-field">
+                <span id="schoolLabel">School / university / workplace</span>
+                <input id="studentSchool" type="text" placeholder="Your school name" />
+              </label>
+              <label class="worker-only portal-setup-field">
+                Skill area / profession
+                <input id="workerSkill" type="text" placeholder="Solar installation, nursing assistant, farming..." />
+              </label>
+              <label class="worker-only portal-setup-field">
+                Certification level
+                <input id="workerCertification" type="text" placeholder="Beginner, certificate, diploma, licensed..." />
+              </label>
+            </div>
+            <button class="forgot-password" id="forgotPassword" type="button" hidden>Forgot password?</button>
+            <button id="portalSubmit" type="submit">Continue</button>
+          </form>
+
+        </div>
+      </section>
+
+      <section class="role-gateway auth-required" id="roleGateway">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Choose your workspace</p>
+            <h2>Go directly to the facilities for your role.</h2>
+            <span id="workspaceStatus">Your account is active. Choose where you want to work.</span>
+          </div>
+        </div>
+        <div class="gateway-grid">
+          <button type="button" data-enter-workspace="student">
+            <strong>Student workspace</strong>
+            <span>Search topics, save courses, ask questions, revise exams, and track progress.</span>
+          </button>
+          <button type="button" data-enter-workspace="teacher">
+            <strong>Teacher workspace</strong>
+            <span>Create lesson plans, practical guides, class activities, and assessments.</span>
+          </button>
+          <button type="button" data-enter-workspace="lecturer">
+            <strong>Lecturer workspace</strong>
+            <span>Prepare university course outlines, tutorials, assignments, notes, and references.</span>
+          </button>
+          <button type="button" data-enter-workspace="worker">
+            <strong>Worker workspace</strong>
+            <span>Use practical skills guides, safety steps, report templates, and workplace learning.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="role-dashboard auth-required" id="roleDashboard">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Your facilities</p>
+            <h2 id="roleDashboardTitle">Workspace dashboard</h2>
+            <span id="roleDashboardSummary">Your role-based tools will appear after login.</span>
+          </div>
+        </div>
+        <div class="role-action-grid" id="roleDashboardCards"></div>
+      </section>
+
+      <nav class="workspace-shortcuts auth-required" id="workspaceShortcuts" aria-label="Workspace tabs">
+        <button class="active" type="button" data-workspace-tab="#dashboard">Dashboard</button>
+        <button type="button" data-workspace-tab="#moduleResearch">Research Focus</button>
+        <button type="button" data-workspace-tab="#portalFeatures">Portal Tools</button>
+        <button type="button" data-workspace-tab="#research-chat">WhatsApp & Chat</button>
+        <button type="button" data-workspace-tab="#student-portal">Profile</button>
+        <button type="button" data-workspace-tab="#account-settings">Settings</button>
+      </nav>
+
+      <section class="portal-features auth-required" id="portalFeatures">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="portalFeaturesEyebrow">Portal tools</p>
+            <h2 id="portalFeaturesTitle">Your role tools</h2>
+            <span id="portalFeaturesSummary">Role-specific CRM features appear here after login.</span>
+          </div>
+        </div>
+        <div class="portal-feature-grid" id="portalFeatureGrid"></div>
+      </section>
+
+      <section class="portal-media auth-required" id="portal-media">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">WhatsApp & media research</p>
+            <h2>Ask by typing, photo, voice, or WhatsApp inside your portal.</h2>
+            <span>These tools use your saved portal profile and WhatsApp number.</span>
+          </div>
+        </div>
+        <div class="portal-grid">
+          <article class="question-card">
+            <div class="panel-heading">
+              <div>
+                <h3>Ask By Photo Or Voice</h3>
+                <span>Snap, upload, record, type, then research</span>
+              </div>
+            </div>
+
+            <label>
+              Type your question
+              <textarea id="multiQuestion" rows="4" placeholder="Type your research question here..."></textarea>
+            </label>
+
+            <div class="media-actions">
+              <label class="file-action">
+                <span>Snap / Upload Question</span>
+                <input id="questionImage" type="file" accept="image/*" capture="environment" />
+              </label>
+              <button id="recordVoice" type="button">Record Voice</button>
+              <button id="stopVoice" type="button" disabled>Stop</button>
+            </div>
+
+            <div class="media-preview" id="mediaPreview">No photo or voice question attached yet.</div>
+
+            <div class="research-actions">
+              <button id="researchNow" type="button">Research Here</button>
+              <button id="sendWhatsapp" type="button">Research On WhatsApp</button>
+            </div>
+            <div class="whatsapp-note">
+              WhatsApp mode opens one chat where you can continue by typing, snapping questions, or sending voice notes.
+            </div>
+          </article>
+
+          <article class="quick-whatsapp">
+            <div>
+              <strong>Installed app quick research</strong>
+              <span id="appModeStatus">Install the app to unlock phone-style WhatsApp quick research.</span>
+            </div>
+            <form id="quickWhatsappForm">
+              <input id="quickWhatsappNumber" type="tel" placeholder="Research WhatsApp number e.g. 23276000000" />
+              <button type="submit">Use This Number</button>
+            </form>
+            <div class="supabase-status">
+              <div>
+                  <strong>Supabase Database</strong>
+                  <span id="supabaseStatus">Using local storage until Supabase config is added.</span>
+              </div>
+              <div class="supabase-tags">
+                  <span>Auth: Portals</span>
+                  <span>DB: Profiles & Questions</span>
+                  <span>Storage: Media</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="next-step-panel auth-required" id="nextStepPanel">
+        <div>
+          <p class="eyebrow">Next best action</p>
+          <h2 id="nextStepTitle">Choose what to do next.</h2>
+          <span id="nextStepSummary">The system will guide you based on your role and progress.</span>
+        </div>
+        <div class="next-step-actions" id="nextStepActions"></div>
+      </section>
+
+      <section class="module-research auth-required" id="moduleResearch">
+        <form class="course-card" id="courseForm">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Research focus</p>
+              <h3 id="coursePickerTitle">Subjects, Courses & Modules</h3>
+              <span id="coursePickerHint">Pick from the subject/course you registered with</span>
+            </div>
+          </div>
+          <div class="module-picker-grid">
+            <label>
+              Subject / course / programme
+              <select id="courseSelect"></select>
+            </label>
+            <label>
+              Module / unit / topic
+              <select id="unitSelect"></select>
+            </label>
+          </div>
+          <button type="submit">Use This For Research</button>
+          <div class="selected-units" id="selectedUnits"></div>
+          <div class="module-action-panel" id="moduleActionPanel" aria-label="Research actions"></div>
+          <div class="starter-prompts" id="starterPrompts" aria-label="Starter research prompts"></div>
+          <div class="learning-path" id="learningPath" aria-label="Guided learning path"></div>
+        </form>
+      </section>
+
+      <section class="account-settings auth-required" id="account-settings">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Account settings</p>
+            <h2>Update your profile and learning context.</h2>
+            <span>These details help AI personalize answers, outlines, plans, and practical guides.</span>
+          </div>
+        </div>
+        <form class="settings-grid" id="accountSettingsForm">
+          <label>Name <input id="settingsName" type="text" /></label>
+          <label>WhatsApp <input id="settingsWhatsapp" type="tel" /></label>
+          <label>Country <select id="settingsCountry"></select></label>
+          <label>Education language
+            <select id="settingsEducationLanguage">
+              <option>English</option>
+              <option>French</option>
+              <option>Arabic</option>
+              <option>Portuguese</option>
+              <option>Swahili</option>
+              <option>Amharic</option>
+              <option>Hausa</option>
+              <option>Yoruba</option>
+              <option>Igbo</option>
+              <option>Kinyarwanda</option>
+              <option>Somali</option>
+              <option>Afrikaans</option>
+              <option>Zulu</option>
+              <option>Xhosa</option>
+            </select>
+          </label>
+          <div class="education-source" id="educationSetupSource">Education setup source: AI draft for Africa-wide use.</div>
+          <label>Role
+            <select id="settingsRole">
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+              <option value="lecturer">Lecturer</option>
+              <option value="worker">Worker</option>
+            </select>
+          </label>
+          <label><span id="settingsLevelLabel">Level</span>
+            <select id="settingsLevel">
+              <option>Primary</option>
+              <option>JSS</option>
+              <option>SSS</option>
+              <option>University</option>
+              <option>Professional</option>
+              <option>Worker</option>
+            </select>
+          </label>
+          <label class="compact-hidden"><span id="settingsStudyTypeLabel">Study type</span>
+            <select id="settingsStudyType">
+              <option value="subject">School subject</option>
+              <option value="course">University course / programme</option>
+              <option value="professional">Professional course</option>
+              <option value="skill">Worker skill</option>
+            </select>
+          </label>
+          <label><span id="settingsDepartmentLabel">Track / faculty / sector</span> <select id="settingsDepartment"></select></label>
+          <label><span id="settingsCourseLabel">Course / subject / programme</span> <select id="settingsCourse"></select></label>
+          <label><span id="settingsSchoolLabel">School / university / workplace</span> <input id="settingsSchool" type="text" /></label>
+          <label><span id="settingsSkillLabel">Subject / module / unit</span> <select id="settingsSkill"></select></label>
+          <label><span id="settingsCertificationLabel">Topic / certification note</span> <input id="settingsCertification" type="text" /></label>
+          <button type="submit">Save Settings</button>
+        </form>
+      </section>
+
+      <section class="student-dashboard auth-required" id="dashboard">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="dashboardEyebrow">Workspace dashboard</p>
+            <h2 id="dashboardTitle">Your study home</h2>
+            <span id="dashboardSubtitle">Saved courses, questions, answers, downloads, and WhatsApp research activity.</span>
+          </div>
+          <button class="ghost-btn" id="clearDemoData" type="button">Clear Demo Data</button>
+        </div>
+        <div class="portal-welcome" id="portalWelcome">
+          <div>
+            <p class="eyebrow" id="portalWelcomeEyebrow">Portal setup</p>
+            <h3 id="portalWelcomeTitle">Complete your portal setup</h3>
+            <span id="portalWelcomeText">Add your WhatsApp number, choose your education path, and select a research focus.</span>
+          </div>
+          <div class="setup-checklist" id="setupChecklist"></div>
+        </div>
+        <div class="dashboard-grid">
+          <article class="stat-card">
+            <strong id="savedUnitsCount">0</strong>
+            <span>Saved units</span>
+          </article>
+          <article class="stat-card">
+            <strong id="questionCount">0</strong>
+            <span>Questions asked</span>
+          </article>
+          <article class="stat-card">
+            <strong id="downloadCount">0</strong>
+            <span>PDF downloads</span>
+          </article>
+          <article class="stat-card">
+            <strong id="whatsappCount">0</strong>
+            <span>WhatsApp requests</span>
+          </article>
+        </div>
+        <div class="streak-card">
+          <div>
+            <p class="eyebrow">Study streak</p>
+            <h3 id="streakTitle">Start today's research streak</h3>
+            <span id="streakText">Ask one question or save one answer to begin.</span>
+          </div>
+          <div class="streak-ring" id="streakRing">0%</div>
+        </div>
+        <div class="mission-card">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Daily mission</p>
+              <h3>Complete today's learning loop</h3>
+            </div>
+            <span id="missionScore">0/3 done</span>
+          </div>
+          <div class="mission-list" id="missionList"></div>
+        </div>
+        <div class="dashboard-columns">
+          <article>
+            <h3 id="dashboardUnitsTitle">My Units</h3>
+            <div class="mini-list" id="dashboardUnits"></div>
+          </article>
+          <article>
+            <h3 id="dashboardQuestionsTitle">Recent Questions</h3>
+            <div class="activity-list" id="dashboardQuestions"></div>
+          </article>
+          <article>
+            <h3 id="dashboardAnswersTitle">Saved Answers</h3>
+            <div class="activity-list" id="dashboardAnswers"></div>
+          </article>
+          <article>
+            <h3>Revision Collections</h3>
+            <div class="activity-list" id="dashboardCollections"></div>
+          </article>
+          <article>
+            <h3>My Notebook</h3>
+            <div class="activity-list" id="dashboardNotes"></div>
+          </article>
+          <article>
+            <h3>Private AI Drafts</h3>
+            <div class="activity-list" id="privateDraftsList"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-grid auth-required" id="browse">
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Browse Subjects</h2>
+            <span>Primary to university</span>
+          </div>
+          <div class="subject-groups" id="subjectGroups"></div>
+        </article>
+
+        <article class="panel" id="waec">
+          <div class="panel-heading">
+            <h2>Exam Papers</h2>
+            <span>WAEC, BECE, revision</span>
+          </div>
+          <div class="exam-list" id="examList"></div>
+        </article>
+      </section>
+
+      <section class="content-grid compact auth-required">
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Trending Searches</h2>
+            <span>Popular now</span>
+          </div>
+          <div class="chip-list" id="trendingList"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <h2>Recent Searches</h2>
+            <span>Saved on this device</span>
+          </div>
+          <div class="history-list" id="historyList"></div>
+        </article>
+      </section>
+
+      <section class="offline-progress auth-required" id="offline-progress">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Offline study packs</p>
+              <h2>Save common packs for low-data study.</h2>
+            </div>
+          </div>
+          <div class="pack-list" id="offlinePackList"></div>
+        </article>
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Progress</p>
+              <h2>Your recommended next topics.</h2>
+            </div>
+          </div>
+          <div class="activity-list" id="studentProgressList"></div>
+        </article>
+      </section>
+
+      <section class="teacher-worker-tools auth-required" id="teacher-tools">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">AI workspaces</p>
+            <h2>Generate answers, course outlines, lesson plans, guides, and practical instructions.</h2>
+            <span>AI creates private drafts for students, teachers, lecturers, and workers. Official public content still requires admin approval.</span>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <form class="tool-card" id="lessonPlanForm">
+            <h3>Lesson Plan Builder</h3>
+            <label>
+              Subject or course
+              <input id="lessonSubject" type="text" placeholder="Biology, Mathematics, Nursing, ICT..." />
+            </label>
+            <label>
+              Topic
+              <input id="lessonTopic" type="text" placeholder="Photosynthesis, fractions, first aid..." />
+            </label>
+            <label>
+              Class or level
+              <input id="lessonLevel" type="text" placeholder="JSS 2, SSS 1, University 100, trainees..." />
+            </label>
+            <button type="submit">Create AI Lesson Plan</button>
+          </form>
+          <article class="tool-output" id="lessonPlanOutput">AI lesson plan drafts will appear here.</article>
+
+          <form class="tool-card" id="courseOutlineForm">
+            <h3>Course Outline Builder</h3>
+            <label>
+              Programme or course
+              <input id="outlineCourse" type="text" placeholder="BSc Computer Science, Nursing, Public Health..." />
+            </label>
+            <label>
+              Module or unit
+              <input id="outlineModule" type="text" placeholder="Database Systems, Anatomy, Research Methods..." />
+            </label>
+            <label>
+              Duration
+              <input id="outlineDuration" type="text" placeholder="6 weeks, 12 weeks, one semester..." />
+            </label>
+            <button type="submit">Create AI Course Outline</button>
+          </form>
+          <article class="tool-output" id="courseOutlineOutput">AI course outlines, tutorials, assignments, and references will appear here.</article>
+
+          <form class="tool-card" id="practicalGuideForm">
+            <h3>Practical & Video Guide</h3>
+            <label>
+              Subject or module
+              <input id="practicalSubject" type="text" placeholder="Chemistry practical, agriculture, computer networking..." />
+            </label>
+            <label>
+              Practical topic
+              <input id="practicalTopic" type="text" placeholder="Test for gases, microscope, subnetting..." />
+            </label>
+            <button type="submit">Create AI Practical Guide</button>
+          </form>
+          <article class="tool-output" id="practicalGuideOutput">AI practical steps, safety notes, and video search links will appear here.</article>
+        </div>
+      </section>
+
+      <section class="results-shell auth-required" id="results" hidden>
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">Research result</p>
+            <h2 id="resultTitle">Database normalization</h2>
+          </div>
+          <div class="result-tools">
+            <select id="answerTone" aria-label="Answer style">
+              <option value="simple">Simple</option>
+              <option value="exam">Exam answer</option>
+              <option value="university">University notes</option>
+            </select>
+            <button class="ghost-btn" id="copyAnswer" type="button">Copy</button>
+            <button class="ghost-btn" id="shareAnswer" type="button">Share</button>
+            <select id="saveCollection" aria-label="Save collection">
+              <option value="General Revision">General Revision</option>
+              <option value="Exam Prep">Exam Prep</option>
+              <option value="Assignments">Assignments</option>
+              <option value="Difficult Topics">Difficult Topics</option>
+            </select>
+            <button class="ghost-btn" id="downloadPdf" type="button">Download PDF</button>
+          </div>
+        </div>
+
+        <div class="result-context" id="resultContext">
+          <span id="resultCountry">Country: saved profile</span>
+          <span id="resultRole">Role: learner</span>
+          <span id="resultLevel">Level: saved level</span>
+          <span id="resultFocus">Focus: selected module</span>
+          <span id="resultAnswerType">Type: answer</span>
+        </div>
+        <div class="safety-warning" id="resultSafetyWarning" hidden></div>
+        <div class="result-primary-actions">
+          <button class="ghost-btn" id="askFollowUp" type="button">Ask Follow-up In Chat</button>
+          <button class="ghost-btn" id="sendAnswerWhatsapp" type="button">Send To WhatsApp</button>
+          <button class="ghost-btn" id="saveAnswerTop" type="button">Save To Dashboard</button>
+        </div>
+
+        <div class="result-tabs" role="tablist" aria-label="Research result sections">
+          <button class="result-tab active" type="button" data-result-tab="answer">Answer</button>
+          <button class="result-tab" type="button" data-result-tab="notes">Notes</button>
+          <button class="result-tab" type="button" data-result-tab="papers">Past Papers</button>
+          <button class="result-tab" type="button" data-result-tab="media">Diagrams & Videos</button>
+          <button class="result-tab" type="button" data-result-tab="quiz">Quiz</button>
+        </div>
+
+        <div class="result-layout">
+          <article class="answer-panel">
+            <div class="result-tab-panel active" id="tab-answer">
+              <h3>Short Answer</h3>
+              <p id="shortAnswer"></p>
+              <div class="quality-banner" id="answerQualityBanner">AI-assisted draft. Admin or approved reviewer approval is required before this is treated as verified learning content.</div>
+            </div>
+            <div class="result-tab-panel" id="tab-notes">
+              <h3>Detailed Notes</h3>
+              <div id="detailedNotes"></div>
+              <h3>Examples</h3>
+              <ul id="examplesList"></ul>
+            </div>
+            <div class="result-tab-panel" id="tab-papers">
+              <h3>Past Papers</h3>
+              <ul id="pastQuestions"></ul>
+              <div class="resource-downloads" id="resourceDownloads"></div>
+            </div>
+            <div class="result-tab-panel" id="tab-media">
+              <h3>Diagrams & Videos</h3>
+              <div class="diagram-preview" id="diagramPreview"></div>
+              <div class="video-placeholder">Video lesson placeholder - connect approved videos from Supabase Storage or YouTube links.</div>
+            </div>
+            <div class="result-tab-panel" id="tab-quiz">
+              <h3>Quick Quiz</h3>
+              <ol id="quizList"></ol>
+              <button class="ghost-btn" id="saveAnswer" type="button">Save Answer</button>
+              <button class="ghost-btn" id="reportAnswer" type="button">Report Wrong Answer</button>
+            </div>
+            <div class="study-kit">
+              <h3>Premium Study Kit</h3>
+              <div class="study-kit-grid">
+                <div>
+                  <strong>Study plan</strong>
+                  <ol id="studyPlanList"></ol>
+                </div>
+                <div>
+                  <strong>Flashcards</strong>
+                  <div class="flashcards" id="flashcards"></div>
+                </div>
+              </div>
+            </div>
+            <div class="next-actions">
+              <h3>Smart Next Actions</h3>
+              <div id="nextActions"></div>
+            </div>
+            <div class="notebook-panel">
+              <h3>My Note On This Topic</h3>
+              <textarea id="topicNote" rows="5" placeholder="Write your own understanding, teacher hints, or assignment points..."></textarea>
+              <div class="note-actions">
+                <button class="ghost-btn" id="saveTopicNote" type="button">Save Note</button>
+                <button class="ghost-btn" id="generateCitation" type="button">Generate Citation</button>
+              </div>
+              <div class="citation-box" id="citationBox">Citation will appear here.</div>
+            </div>
+          </article>
+
+          <aside class="resource-panel">
+            <h3>Difficulty</h3>
+            <div class="difficulty-meter">
+              <span id="difficultyLabel">Beginner friendly</span>
+              <div><i id="difficultyBar"></i></div>
+            </div>
+            <h3>Books & References</h3>
+            <ul id="referencesList"></ul>
+            <h3>Source Cards</h3>
+            <div class="source-cards" id="sourceCards"></div>
+            <h3>Related Topics</h3>
+            <div class="chip-list" id="relatedTopics"></div>
+            <h3>Result Quality</h3>
+            <div class="quality-list" id="resultQualityList">
+              <span>Source labels</span>
+              <span>Admin/reviewer workflow ready</span>
+              <span>Report button active</span>
+            </div>
+            <h3>Professional Status</h3>
+            <div class="quality-list" id="professionalStatusList">
+              <span>Draft answer</span>
+              <span>Country-aware context</span>
+              <span>Safety labels enabled</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="ai-tutor auth-required" id="ai-tutor">
+        <div>
+          <p class="eyebrow">AI tutor</p>
+          <h2>Ask for a simple explanation, detailed notes, examples, quiz, or summary.</h2>
+        </div>
+        <div class="tutor-box">
+          <div class="prompt-row">
+            <button type="button" data-tutor-prompt="Explain it like I am in JSS">Simple</button>
+            <button type="button" data-tutor-prompt="Give detailed university notes">Detailed</button>
+            <button type="button" data-tutor-prompt="Create a quick quiz">Quiz</button>
+            <button type="button" data-tutor-prompt="Give top exam tips and common mistakes">Exam Tips</button>
+            <button type="button" data-tutor-prompt="Walk through a past paper question step-by-step">Past Paper</button>
+          </div>
+          <textarea id="tutorQuestion" rows="3" placeholder="Ask: What is mitosis?"></textarea>
+          <button id="askTutor" type="button">Ask AI Tutor</button>
+          <div class="tutor-answer" id="tutorAnswer">The tutor is ready for questions. Groq AI can be connected through Supabase Edge Functions when the API key is added.</div>
+        </div>
+      </section>
+
+      <section class="research-chat auth-required" id="research-chat">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Research chat</p>
+            <h2>Chat like a phone AI assistant.</h2>
+            <span>Ask follow-up questions and keep the conversation saved on this device.</span>
+          </div>
+          <button class="ghost-btn" id="clearChat" type="button">Clear Chat</button>
+        </div>
+        <div class="chat-shell">
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="prompt-row">
+            <button type="button" data-chat-prompt="Explain photosynthesis simply">Photosynthesis</button>
+            <button type="button" data-chat-prompt="Give WAEC Biology revision questions">WAEC revision</button>
+            <button type="button" data-chat-prompt="Explain database normalization with examples">Database help</button>
+            <button type="button" data-chat-prompt="Create a lesson plan for photosynthesis">Lesson plan</button>
+            <button type="button" data-chat-prompt="Guide me through a chemistry practical with safety steps">Practical</button>
+            <button type="button" data-chat-prompt="How do I prepare for final exams effectively?">Exam Study Plan</button>
+            <button type="button" data-chat-prompt="Explain complex economic inflation causes simply">Economics</button>
+          </div>
+          <form class="chat-form" id="chatForm">
+            <input id="chatInput" type="text" placeholder="Message Student Research AI..." />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="public-info auth-required">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">AI draft policy</p>
+            <h2>AI manages learning drafts, not official publishing.</h2>
+            <span>Answers, course outlines, lesson plans, assignments, guides, and practical steps are generated as private drafts. Official platform content is controlled by admin approval.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-login auth-required" id="admin-login">
+        <div>
+          <p class="eyebrow">Admin verification</p>
+          <h2>Review AI-draft education maps before marking them verified.</h2>
+          <span id="adminLoginStatus">This area is hidden from normal student navigation.</span>
+        </div>
+        <form id="adminLoginForm">
+          <label>Admin email <input id="adminEmail" type="email" placeholder="admin@studentresearch.africa" /></label>
+          <label>Password <input id="adminPassword" type="password" placeholder="admin123" /></label>
+          <button type="submit">Unlock Admin</button>
+        </form>
+      </section>
+
+      <section class="teacher-admin auth-required" id="teacher-admin" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Education map verification</p>
+            <h2>Move country education setup from AI draft to reviewed or verified.</h2>
+            <span>Use this prototype panel to track country-map review status before Supabase/admin roles are connected.</span>
+          </div>
+          <button class="ghost-btn" id="adminLogout" type="button">Lock Admin</button>
+        </div>
+        <div class="admin-grid">
+          <article class="admin-card">
+            <h3>Current Country Map</h3>
+            <div class="activity-list" id="educationVerificationList"></div>
+            <div class="qa-actions">
+              <button type="button" data-education-status="AI draft">AI Draft</button>
+              <button type="button" data-education-status="Admin reviewed">Admin Reviewed</button>
+              <button type="button" data-education-status="Verified">Verified</button>
+            </div>
+          </article>
+          <article class="admin-card">
+            <h3>Upload / Contributor Queue</h3>
+            <form id="teacherUploadForm">
+              <label>Resource title <input id="uploadTitle" type="text" placeholder="Biology WASSCE guide" /></label>
+              <label>Type
+                <select id="uploadType">
+                  <option>Education map</option>
+                  <option>Lesson plan</option>
+                  <option>Course outline</option>
+                  <option>Worksheet</option>
+                </select>
+              </label>
+              <label>File <input id="resourceFile" type="file" /></label>
+              <button type="submit">Send For Approval</button>
+            </form>
+          </article>
+          <article class="admin-card">
+            <h3>Approval Queue</h3>
+            <div class="activity-list" id="approvalQueue"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Supabase Tables</h3>
+            <div class="collection-map" id="collectionMap"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="feature-readiness auth-required" id="feature-readiness">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Frontend readiness</p>
+            <h2>Check that the main website features are working.</h2>
+            <span id="qaSummary">Run a quick check after frontend changes or before showing the system to users.</span>
+          </div>
+          <div class="qa-actions">
+            <button class="ghost-btn" id="runQaChecks" type="button">Run Checks</button>
+            <button class="ghost-btn" id="runDemoJourney" type="button">Run Demo Journey</button>
+            <button class="ghost-btn" id="runRoleJourneys" type="button">Test All Roles</button>
+          </div>
+        </div>
+        <div class="qa-list" id="qaList"></div>
+        <div class="qa-journey-log" id="qaJourneyLog">Demo journey has not been run yet.</div>
+      </section>
+
+      <footer class="portal-footer auth-required">
+        <div>
+          <strong id="portalFooterTitle">Student Research Africa portal</strong>
+          <span id="portalFooterMeta">Dashboard, WhatsApp, settings, and role tools ready.</span>
+        </div>
+        <button class="install-btn" id="installApp" type="button" hidden>Install</button>
+      </footer>
+    </main>
+
+    <footer class="footer" data-public-home-only>
+      <strong>Student Research Africa</strong>
+      <div class="footer-actions">
+        <nav aria-label="Footer navigation">
+          <a href="#home" data-public-page="home">Home</a>
+          <a href="#about-us" data-public-page="about-us">About</a>
+          <a href="#contact-us" data-public-page="contact-us">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </nav>
+      </div>
+    </footer>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Mobile app navigation">
+      <a href="#home">Home</a>
+      <a class="auth-required" href="#roleGateway">Workspace</a>
+      <a href="#join-us" data-public-page="join-us">Join</a>
+      <a class="auth-required" href="#browse">Browse</a>
+      <a class="auth-required" href="#ai-tutor">Tutor</a>
+      <a class="auth-required" href="#research-chat">Chat</a>
+    </nav>
+
+    <div class="app-drawer" id="appDrawer" hidden>
+      <div class="app-drawer-panel" role="dialog" aria-modal="true" aria-label="App menu">
+        <div class="command-head">
+          <strong>App Menu</strong>
+          <button id="appDrawerClose" type="button">Close</button>
+        </div>
+        <nav id="appDrawerLinks" aria-label="App drawer navigation"></nav>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <div class="command-modal" id="commandModal" hidden>
+      <div class="command-box" role="dialog" aria-modal="true" aria-label="Quick search">
+        <div class="command-head">
+          <strong>Quick Search</strong>
+          <button id="closeCommand" type="button" aria-label="Close quick search">Close</button>
+        </div>
+        <input id="commandInput" type="search" placeholder="Try WAEC Biology, Contract law, Python loops..." />
+        <div class="command-results" id="commandResults"></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="index.js?v=44"></script>
+  </body>
+</html>

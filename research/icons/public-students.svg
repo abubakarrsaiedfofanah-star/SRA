@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Student multilingual learning card</title>
+  <desc id="desc">Neutral African education app image for students with multilingual study labels.</desc>
+  <rect width="900" height="560" fill="#f6f7f2"/>
+  <rect x="54" y="48" width="792" height="464" rx="28" fill="#ffffff" stroke="#d9e1de" stroke-width="4"/>
+  <rect x="96" y="92" width="260" height="330" rx="24" fill="#edf6f9"/>
+  <circle cx="178" cy="174" r="50" fill="#0f766e"/>
+  <circle cx="266" cy="174" r="50" fill="#d97706"/>
+  <rect x="136" y="272" width="220" height="26" rx="13" fill="#2563eb"/>
+  <rect x="136" y="326" width="168" height="20" rx="10" fill="#d9e1de"/>
+  <rect x="416" y="104" width="330" height="54" rx="14" fill="#0f766e"/>
+  <rect x="416" y="194" width="420" height="28" rx="14" fill="#d9e1de"/>
+  <rect x="416" y="248" width="350" height="28" rx="14" fill="#d9e1de"/>
+  <rect x="416" y="302" width="270" height="28" rx="14" fill="#d9e1de"/>
+  <rect x="92" y="448" width="716" height="58" rx="18" fill="#101416"/>
+  <text x="122" y="486" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="700">Study  |  Francais  |  &#1575;&#1604;&#1578;&#1593;&#1604;&#1605;  |  Portugues  |  Soma</text>
+</svg>

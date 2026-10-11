@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-labelledby="title desc">
+  <title id="title">Verified education content</title>
+  <desc id="desc">Admin reviewed and verified learning content card.</desc>
+  <rect width="700" height="440" fill="#f6f7f2"/>
+  <rect x="84" y="68" width="532" height="300" rx="28" fill="#ffffff" stroke="#d9e1de" stroke-width="5"/>
+  <rect x="130" y="116" width="260" height="38" rx="14" fill="#d9e1de"/>
+  <rect x="130" y="188" width="210" height="24" rx="12" fill="#d9e1de"/>
+  <rect x="130" y="240" width="250" height="24" rx="12" fill="#d9e1de"/>
+  <circle cx="504" cy="204" r="82" fill="#0f766e"/>
+  <path d="M466 206l28 30 54-68" fill="none" stroke="#ffffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="130" y="304" width="136" height="32" rx="16" fill="#2563eb"/>
+  <rect x="286" y="304" width="116" height="32" rx="16" fill="#d97706"/>
+  <text x="96" y="404" fill="#172026" font-family="Arial, sans-serif" font-size="28" font-weight="700">AI draft | reviewed | verified</text>
+</svg>

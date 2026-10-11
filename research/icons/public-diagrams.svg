@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 440" role="img" aria-labelledby="title desc">
+  <title id="title">Diagram learning card</title>
+  <desc id="desc">Neutral science diagram image with multilingual labels.</desc>
+  <rect width="700" height="440" fill="#edf6f9"/>
+  <circle cx="280" cy="210" r="118" fill="#ffffff" stroke="#0f766e" stroke-width="12"/>
+  <circle cx="280" cy="210" r="54" fill="#d97706" opacity=".82"/>
+  <ellipse cx="430" cy="164" rx="78" ry="42" fill="#2563eb" opacity=".75"/>
+  <ellipse cx="424" cy="286" rx="84" ry="38" fill="#0f766e" opacity=".65"/>
+  <rect x="72" y="350" width="556" height="44" rx="14" fill="#ffffff" stroke="#d9e1de" stroke-width="3"/>
+  <text x="96" y="380" fill="#172026" font-family="Arial, sans-serif" font-size="26" font-weight="700">Diagrams | Schemas | &#1585;&#1587;&#1608;&#1605; | Ramani</text>
+</svg>

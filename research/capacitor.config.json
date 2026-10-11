@@ -1,0 +1,9 @@
+{
+  "appId": "com.studentresearchafrica.app",
+  "appName": "Student Research Africa",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "backgroundColor": "#0f766e"
+  }
+}

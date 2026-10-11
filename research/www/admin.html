@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>Staff Dashboard - Student Research Africa</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="admin-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Back to Student Research Africa">
+        <span class="brand-mark">SRA</span>
+        <span>
+          <strong>Staff Dashboard</strong>
+          <small>private admin content management</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Staff navigation">
+        <a href="index.html">Student Site</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="admin-login" id="admin-login">
+        <div class="admin-login-intro">
+          <p class="eyebrow">Staff only</p>
+          <h1>Admin and teacher access</h1>
+          <p>Keep learning content accurate, organized, and ready for students across Africa.</p>
+          <div class="admin-login-points" aria-label="Staff dashboard capabilities">
+            <span>Content review</span>
+            <span>Curriculum records</span>
+            <span>Resource library</span>
+          </div>
+        </div>
+        <div class="staff-auth-grid">
+          <form id="adminRegisterForm">
+            <h3>Register Staff</h3>
+            <label>
+              Full name
+              <input id="registerName" type="text" placeholder="Teacher or admin name" />
+            </label>
+            <label>
+              Staff email
+              <input id="registerEmail" type="email" placeholder="admin@studentresearch.africa" />
+            </label>
+            <label>
+              Role
+              <select id="registerRole">
+                <option>admin</option>
+                <option>teacher</option>
+              </select>
+            </label>
+            <label>
+              Password
+              <input id="registerPassword" type="password" placeholder="Create password" />
+            </label>
+            <button type="submit">Register Staff</button>
+            <span id="adminRegisterStatus">First staff account can be registered here for the prototype.</span>
+          </form>
+
+          <form id="adminLoginForm">
+            <h3>Login Staff</h3>
+            <label>
+              Staff email
+              <input id="adminEmail" type="email" placeholder="admin@studentresearch.africa" />
+            </label>
+            <label>
+              Password
+              <input id="adminPassword" type="password" placeholder="Your staff password" />
+            </label>
+            <button type="submit">Open Staff Dashboard</button>
+            <span id="adminLoginStatus">Only approved staff should use this page.</span>
+          </form>
+        </div>
+      </section>
+
+      <section class="teacher-admin locked" id="teacher-admin" hidden>
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Admin content management</p>
+            <h2>Add official resources, approve content, and manage quality.</h2>
+            <span>Admin controls for official notes, PDFs, past papers, diagrams, videos, moderation, and analytics.</span>
+          </div>
+          <button class="ghost-btn" id="adminLogout" type="button">Lock Admin</button>
+        </div>
+        <div class="admin-grid">
+          <form class="admin-card" id="teacherUploadForm">
+            <h3>Admin Resource Upload</h3>
+            <label>
+              Resource title
+              <input id="uploadTitle" type="text" placeholder="WAEC Biology cell division notes" />
+            </label>
+            <label>
+              Resource type
+              <select id="uploadType">
+                <option>Notes</option>
+                <option>Past paper</option>
+                <option>Marking guide</option>
+                <option>Diagram</option>
+                <option>Video lesson</option>
+                <option>Assignment</option>
+              </select>
+            </label>
+            <label>
+              File
+              <input id="resourceFile" type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,image/*,audio/*,video/*" />
+            </label>
+            <button type="submit">Save To Review Queue</button>
+          </form>
+          <article class="admin-card">
+            <h3>Admin Queue</h3>
+            <div class="activity-list" id="approvalQueue"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Database Schema</h3>
+            <div class="collection-map" id="collectionMap"></div>
+          </article>
+        </div>
+
+        <div class="admin-grid professional-admin-grid">
+          <form class="admin-card" id="curriculumForm">
+            <h3>Curriculum Editor</h3>
+            <label>Country <input id="curriculumCountry" type="text" placeholder="Sierra Leone" /></label>
+            <label>Exam body <input id="curriculumExamBody" type="text" placeholder="WAEC, KNEC, UNEB..." /></label>
+            <label>Level <input id="curriculumLevel" type="text" placeholder="JSS, SSS, University..." /></label>
+            <label>Subject <input id="curriculumSubject" type="text" placeholder="Biology" /></label>
+            <label>Topic <input id="curriculumTopic" type="text" placeholder="Photosynthesis" /></label>
+            <label>Status
+              <select id="curriculumStatus">
+                <option value="draft">Draft</option>
+                <option value="pendingReview">Pending review</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+                <option value="needsCorrection">Needs correction</option>
+              </select>
+            </label>
+            <button type="submit">Save Curriculum Record</button>
+          </form>
+
+          <form class="admin-card" id="videoForm">
+            <h3>Approved Video Library</h3>
+            <label>Title <input id="videoTitle" type="text" placeholder="Photosynthesis practical lesson" /></label>
+            <label>Subject <input id="videoSubject" type="text" placeholder="Biology" /></label>
+            <label>Topic <input id="videoTopic" type="text" placeholder="Photosynthesis" /></label>
+            <label>Language <input id="videoLanguage" type="text" placeholder="English" /></label>
+            <label>Link <input id="videoLink" type="url" placeholder="https://..." /></label>
+            <label>Status
+              <select id="videoStatus">
+                <option value="pendingReview">Pending review</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+              </select>
+            </label>
+            <button type="submit">Save Video</button>
+          </form>
+
+          <form class="admin-card" id="pastPaperForm">
+            <h3>Past Paper Database</h3>
+            <label>Country <input id="paperCountry" type="text" placeholder="Ghana" /></label>
+            <label>Exam body <input id="paperExamBody" type="text" placeholder="WAEC" /></label>
+            <label>Subject <input id="paperSubject" type="text" placeholder="Mathematics" /></label>
+            <label>Year <input id="paperYear" type="number" placeholder="2026" /></label>
+            <label>Paper type <input id="paperType" type="text" placeholder="Objective, theory, practical" /></label>
+            <label>Download link <input id="paperLink" type="url" placeholder="https://..." /></label>
+            <button type="submit">Save Past Paper</button>
+          </form>
+        </div>
+
+        <div class="admin-grid">
+          <article class="admin-card">
+            <h3>Curriculum Records</h3>
+            <div class="activity-list" id="curriculumRecords"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Video Records</h3>
+            <div class="activity-list" id="videoRecords"></div>
+          </article>
+          <article class="admin-card">
+            <h3>Past Paper Records</h3>
+            <div class="activity-list" id="pastPaperRecords"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="update-banner" id="updateBanner" hidden>
+      <span>New version available</span>
+      <button id="updateNow" type="button">Update now</button>
+    </div>
+
+    <script src="supabase-config.js"></script>
+    <script src="admin.js?v=44"></script>
+  </body>
+</html>
