@@ -2997,6 +2997,19 @@ function getStudyStreak() {
   return streak;
 }
 
+const africanScholarTips = [
+  { quote: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela", tip: "Review your notes consistently every morning and evening." },
+  { quote: "An ant on the move does more than a dozing ox.", author: "Rwandan Proverb", tip: "Take small daily study steps rather than cramming." },
+  { quote: "He who learns, teaches.", author: "Ethiopian Proverb", tip: "Explain what you study to a classmate or study group." },
+  { quote: "Knowledge is like a garden: if it is not cultivated, it cannot be harvested.", author: "Guinean Proverb", tip: "Practice past exam questions regularly." },
+  { quote: "If you want to go fast, go alone. If you want to go far, go together.", author: "African Proverb", tip: "Collaborate with peers in your study portal." }
+];
+
+function getDailyScholarTip() {
+  const index = Math.floor(Date.now() / 86400000) % africanScholarTips.length;
+  return africanScholarTips[index];
+}
+
 function renderDashboard() {
   if (!elements.dashboardTitle) {
     return;
@@ -3026,6 +3039,14 @@ function renderDashboard() {
   elements.streakTitle.textContent = progress >= 100 ? `🔥 ${streak}-Day Streak Complete!` : `🔥 ${streak}-Day Study Streak Active`;
   elements.streakText.textContent =
     progress >= 100 ? "Great work. You have studied, saved, and asked today." : `Add units, ask questions, and save answers to extend your ${streak}-day streak.`;
+
+  const dailyTip = getDailyScholarTip();
+  const qEl = document.getElementById("scholarQuote");
+  const aEl = document.getElementById("scholarAuthor");
+  const tEl = document.getElementById("scholarTip");
+  if (qEl) qEl.textContent = `"${dailyTip.quote}"`;
+  if (aEl) aEl.textContent = `— ${dailyTip.author}`;
+  if (tEl) tEl.textContent = `💡 Tip: ${dailyTip.tip}`;
 
   $("#dashboardUnitsTitle").textContent = "Saved courses and units";
   elements.dashboardUnits.innerHTML = state.selectedUnits.length
