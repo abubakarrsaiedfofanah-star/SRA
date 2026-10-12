@@ -1408,6 +1408,22 @@
         </div>
         <button class="install-btn" id="installApp" type="button" hidden>Install</button>
       </footer>
+
+      <div id="streakFloatingWidget" class="pomodoro-widget auth-required" style="position:fixed; bottom:140px; right:20px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:0.8rem 1rem; box-shadow:0 10px 25px rgba(15,118,110,0.15); z-index:998; display:flex; align-items:center; gap:0.8rem; font-family:inherit;">
+        <div style="display:flex; flex-direction:column;">
+          <span style="font-size:0.75rem; color:var(--muted); font-weight:700; text-transform:uppercase;">Study Streak</span>
+          <strong id="floatingStreakDisplay" style="font-size:1.1rem; color:var(--brand);">🔥 Active</strong>
+        </div>
+        <a href="#dashboard" class="ghost-btn" style="padding:0.4rem 0.8rem; font-size:0.85rem; text-decoration:none;">View</a>
+      </div>
+
+      <div id="pomodoroFloatingWidget" class="pomodoro-widget" style="position:fixed; bottom:70px; right:20px; background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:0.8rem 1rem; box-shadow:0 10px 25px rgba(0,0,0,0.15); z-index:999; display:flex; align-items:center; gap:0.8rem; font-family:inherit;">
+        <div style="display:flex; flex-direction:column;">
+          <span style="font-size:0.75rem; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Study Timer</span>
+          <strong id="pomodoroDisplay" style="font-size:1.1rem; color:var(--primary);">25:00</strong>
+        </div>
+        <button id="pomodoroToggleBtn" type="button" class="primary-btn" style="padding:0.4rem 0.8rem; font-size:0.85rem; background:var(--primary); color:white; border:none; border-radius:8px; cursor:pointer;">Start</button>
+      </div>
     </main>
 
     <footer class="footer" data-public-home-only>
