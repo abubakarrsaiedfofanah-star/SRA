@@ -1,12 +1,5 @@
 /node_modules/
-/research/node_modules/
 /.idea/
-/research/.idea/
-/research/android/.gradle/
-/research/android/app/build/
-/research/android/build/
-/research/android/.idea/
-/research/android/app/.gradle/
 /android/.gradle/
 /android/app/build/
 /build/
