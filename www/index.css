@@ -4276,6 +4276,30 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2) !important;
 }
 
+/* Next-Gen GUI Enhancements & Floating Widgets Styling */
+.pomodoro-widget {
+  background: var(--surface) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 118, 110, 0.2) !important;
+  box-shadow: 0 20px 45px rgba(15, 118, 110, 0.15) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pomodoro-widget:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 55px rgba(15, 118, 110, 0.22) !important;
+}
+
+.toast {
+  background: var(--brand-dark) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 14px !important;
+  box-shadow: 0 16px 35px rgba(15, 118, 110, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
   .portal-choice-grid button,
   .portal-feature-grid article,
   .setup-item,
