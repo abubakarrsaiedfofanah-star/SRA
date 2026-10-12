@@ -1701,6 +1701,7 @@ const elements = {
   difficultyBar: $("#difficultyBar"),
   saveAnswer: $("#saveAnswer"),
   saveAnswerTop: $("#saveAnswerTop"),
+  bookmarkTopicBtn: $("#bookmarkTopicBtn"),
   askFollowUp: $("#askFollowUp"),
   sendAnswerWhatsapp: $("#sendAnswerWhatsapp"),
   reportAnswer: $("#reportAnswer"),
@@ -3064,6 +3065,14 @@ function renderDashboard() {
         .map((item) => `<div class="activity-item"><strong>${item.title}</strong><span>${item.text}</span></div>`)
         .join("")
     : `<div class="activity-item">Your own topic notes will appear here.</div>`;
+
+  const bookmarks = getLocalList("studentResearchBookmarks");
+  const bEl = document.getElementById("dashboardBookmarks");
+  if (bEl) {
+    bEl.innerHTML = bookmarks.length
+      ? bookmarks.slice(0, 5).map((item) => `<div class="activity-item"><strong>⭐ ${item.title}</strong><span>${item.short}</span></div>`).join("")
+      : `<div class="activity-item">Bookmarked topics will appear here for quick access.</div>`;
+  }
   renderPrivateDrafts();
   renderDailyMissions(questions, answers);
   renderNextStepPanel();
@@ -4696,6 +4705,25 @@ function saveCurrentAnswer() {
   }
 }
 
+function toggleBookmarkTopic() {
+  if (!state.currentAnswer) {
+    showToast("No active answer to bookmark.");
+    return;
+  }
+  const bookmarks = getLocalList("studentResearchBookmarks");
+  const exists = bookmarks.some((item) => item.title === state.currentAnswer.title);
+  let updated;
+  if (exists) {
+    updated = bookmarks.filter((item) => item.title !== state.currentAnswer.title);
+    showToast("Removed from bookmarks.");
+  } else {
+    updated = [state.currentAnswer, ...bookmarks].slice(0, 30);
+    showToast("⭐ Topic bookmarked successfully!");
+  }
+  saveLocalList("studentResearchBookmarks", updated);
+  renderDashboard();
+}
+
 function getShareText() {
   return `${state.currentQuery || "Study answer"}\n\n${elements.shortAnswer.textContent}\n\nStudent Research Africa`;
 }
@@ -5146,6 +5174,7 @@ function bindEvents() {
   });
   elements.saveAnswer.addEventListener("click", saveCurrentAnswer);
   elements.saveAnswerTop.addEventListener("click", saveCurrentAnswer);
+  elements.bookmarkTopicBtn?.addEventListener("click", toggleBookmarkTopic);
   elements.askFollowUp.addEventListener("click", askCurrentAnswerFollowUp);
   elements.sendAnswerWhatsapp.addEventListener("click", sendCurrentAnswerToWhatsapp);
   elements.saveTopicNote.addEventListener("click", saveTopicNote);
